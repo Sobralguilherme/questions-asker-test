@@ -1,4 +1,4 @@
-Django==3.2.6
+Django==3.2.6 # Django Version
 psycopg2==2.9.1  # PostgreSQL database adapter
 django-environ==0.7.0  # Environment variables handling
-python-decouple==3.5
+python-decouple==3.5 # Python Variable lib
