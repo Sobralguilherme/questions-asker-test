@@ -4,3 +4,5 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# ... (existing content)
+COPY settings_prod.py /usr/src/app/meuprojetodjango/settings_prod.py
