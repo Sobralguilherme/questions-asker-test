@@ -1,9 +1,19 @@
 version: '3'
+
 services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: yourdbname
+      POSTGRES_USER: yourdbuser
+      POSTGRES_PASSWORD: yourdbpassword
+
   web:
-    build: 
+    build: .
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/usr/src/app
     ports:
       - "8000:8000"
-    volumes:
-      - .:/usr/src/app  # Mount your local code into the container
-    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
