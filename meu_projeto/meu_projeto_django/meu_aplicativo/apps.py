@@ -1,4 +1,4 @@
-//import django appconfig
+#import django appconfig
 from django.apps import AppConfig
 
 
